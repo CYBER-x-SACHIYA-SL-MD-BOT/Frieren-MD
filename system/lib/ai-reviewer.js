@@ -1,18 +1,17 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { getGeminiClient } from "./gemini_helper.js";
 import fs from "fs";
 import 'dotenv/config';
 
 async function review() {
-  // Ambil token dari .env (untuk lokal) atau Environment Variable (untuk GitHub Action)
-  const apiKey = process.env.GEMINI_API_KEY || process.env.GEMINI_TOKEN;
-  
-  if (!apiKey) {
-    console.error("❌ Error: GEMINI_API_KEY tidak ditemukan di .env atau Environment Variable.");
+  let client;
+  try {
+    client = getGeminiClient();
+  } catch (err) {
+    console.error(`❌ Error: ${err.message}`);
     process.exit(1);
   }
 
-  const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = client.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   // Membaca file diff (perubahan kode) yang dihasilkan oleh GitHub Action
   if (!fs.existsSync("changes.diff")) {
