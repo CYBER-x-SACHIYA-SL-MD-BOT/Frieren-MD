@@ -174,29 +174,7 @@ const startBot = async () => {
           const meta = await getMetadata(u.id, xp),
                 g = meta?.subject || 'Grup'
 
-          // --- AUTO LEAVE IF NO OWNER ---
-          if (u.action === 'remove') {
-              const ownerNums = global.ownerNumber.map(n => n.replace(/\D/g, ''))
-              
-              // 1. Cek apakah ada owner di antara orang yang keluar/dikeluarkan
-              const ownerLeft = u.participants.some(p => ownerNums.includes(p.split('@')[0].split(':')[0]))
-              
-              if (ownerLeft) {
-                  // 2. Jika owner keluar, baru cek apakah masih ada owner lain yang tersisa di grup
-                  const stillHasOwner = meta.participants?.some(p => {
-                      const pId = (p.id || p.jid || '').split('@')[0].split(':')[0]
-                      return ownerNums.includes(pId)
-                  })
-                  
-                  if (!stillHasOwner) {
-                      await xp.sendMessage(u.id, { text: '⚠️ *AUTO LEAVE*\nOwner terakhir telah meninggalkan grup. Bot akan keluar otomatis demi keamanan.' })
-                      await new Promise(r => setTimeout(r, 2000))
-                      await xp.groupLeave(u.id)
-                      return 
-                  }
-              }
-          }
-
+          // --- AUTO WELCOME/LEFT ---
           for (const pid of u.participants) {
             if (u.action === 'add' || u.action === 'remove') {
               const gcData = getGc({ id: u.id }),
