@@ -13,7 +13,7 @@ const memoryCache = {},
 let imgCache = {}
 
 async function _imgTmp() {
-  const thumbPath = './media/thumb.jpg'
+  const thumbPath = './media/frieren-thumb.jpg'
   if (!fs.existsSync(thumbPath)) return
 
   const img = fs.readFileSync(thumbPath)

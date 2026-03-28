@@ -206,7 +206,7 @@ const startBot = async () => {
               const { txt } = await txtWlc(xp, { id: u.id })
               const mention = '@' + (pid?.split('@')[0] || pid)
               const text = txt.replace(/@user|%user/gi, mention)
-              const welcomeImg = './media/welcome.jpg'
+              const welcomeImg = './media/frieren-welcome.jpg'
               if (fs.existsSync(welcomeImg)) await xp.sendMessage(u.id, { image: { url: welcomeImg }, caption: text, mentions: [pid] })
               else await xp.sendMessage(u.id, { text, mentions: [pid] })
             }

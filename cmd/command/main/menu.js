@@ -623,8 +623,8 @@ async function sendMenuWithPremiumUI(xp, m, text, greeting, p, availableCategori
     };
 
     // Read Local Images
-    const menuImgPath = './media/mainmenu.jpg';
-    const thumbImgPath = './media/thumb.jpg';
+    const menuImgPath = './media/frieren-menu.jpg';
+    const thumbImgPath = './media/frieren-thumb.jpg';
     
     let menuImageBuffer, thumbImageBuffer;
     
