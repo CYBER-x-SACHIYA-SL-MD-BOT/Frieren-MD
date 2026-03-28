@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./media/frieren-menu.jpg" width="100%" style="border-radius: 15px;"/>
+  <img src="https://c.termai.cc/i153/9tU.jpg" width="100%" style="border-radius: 15px;"/>
 </p>
 
 <!-- Dynamic Typing Animation -->
@@ -109,7 +109,7 @@ Jika Anda menemukan bug, error, atau memiliki saran fitur, silakan laporkan mela
 </p>
 
 <p align="center">
-  <img src="./media/frieren-dev.jpg" width="200" style="border-radius: 50%; border: 3px solid #92E3A9;"/>
+  <img src="https://c.termai.cc/i153/9tU.jpg" width="200" style="border-radius: 50%; border: 3px solid #92E3A9;"/>
 </p>
 
 ---
