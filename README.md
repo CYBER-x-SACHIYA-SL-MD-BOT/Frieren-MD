@@ -71,6 +71,7 @@ npm start
 ## 🏗️ Arsitektur & Alur Kerja
 
 ### 1. Sistem Dispatcher (Penerima Pesan)
+
 Diagram ini menjelaskan bagaimana **Frieren-MD** memproses setiap pesan yang masuk.
 
 ```mermaid
@@ -91,6 +92,7 @@ sequenceDiagram
 ```
 
 ### 2. Siklus Petualangan RPG V3
+
 Logika di balik sistem RPG yang memastikan permainan tetap seimbang.
 
 ```mermaid
@@ -107,6 +109,7 @@ graph LR
 ```
 
 ### 3. Struktur Proyek (Modular)
+
 Pemisahan tanggung jawab antar komponen sistem.
 
 ```mermaid
