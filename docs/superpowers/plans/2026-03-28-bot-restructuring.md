@@ -4,7 +4,8 @@
 
 **Goal:** Clean up the bot structure, rename files to kebab-case English, modularize the core, and provide a semantic Data API for easier development.
 
-**Architecture:** 
+**Architecture:**
+
 - `system/core/bot.js` for initialization.
 - `system/db/data.js` enhancement for semantic user/group access.
 - Batch renaming of `cmd/command/` and `cmd/plugins/`.
@@ -16,6 +17,7 @@
 ### Task 1: Semantic Data API Enhancement
 
 **Files:**
+
 - Modify: `system/db/data.js`
 
 - [ ] **Step 1: Implement `User` and `Group` helper classes**
@@ -26,30 +28,30 @@
  */
 class User {
     constructor(jid, data) {
-        this.jid = jid;
-        this._data = data;
+        this.jid = jid
+        this._data = data
     }
-    
+
     addExp(amount) {
-        this._data.exp += amount;
-        return this;
+        this._data.exp += amount
+        return this
     }
-    
+
     useLimit(amount = 1) {
-        this._data.limit -= amount;
-        return this;
+        this._data.limit -= amount
+        return this
     }
-    
+
     async save() {
-        await saveDbDebounced();
+        await saveDbDebounced()
     }
 }
 
 // Add these exports
-export const user = (jid) => {
-    const data = db().key[jid] || authUserSync(jid);
-    return new User(jid, data);
-};
+export const user = jid => {
+    const data = db().key[jid] || authUserSync(jid)
+    return new User(jid, data)
+}
 ```
 
 - [ ] **Step 2: Commit**
@@ -64,6 +66,7 @@ git commit -m "feat(db): add semantic user and group helpers"
 ### Task 2: Modularize Bot Core
 
 **Files:**
+
 - Create: `system/core/bot.js`
 - Modify: `index.js`
 
@@ -78,7 +81,7 @@ import './system/global.js'
 import { startBot } from './system/core/bot.js'
 import { loadAll, watch } from './cmd/handle.js'
 
-(async () => {
+;(async () => {
     await startBot()
     await loadAll()
     watch()
@@ -97,11 +100,13 @@ git commit -m "refactor: modularize bot core and simplify index.js"
 ### Task 3: Semantic File Renaming (Commands & Plugins)
 
 **Files:**
+
 - Rename: All files in `cmd/command/` and `cmd/plugins/` (e.g., `hytamkan.js` -> `black-white-filter.js`)
 
 - [ ] **Step 1: Batch rename Indonesian files to English kebab-case**
 
 Run:
+
 ```bash
 # Example renames
 mv cmd/command/tools/hytamkan.js cmd/command/tools/black-white-filter.js
@@ -123,6 +128,7 @@ git commit -m "refactor: rename all command/plugin files to semantic English keb
 ### Task 4: In-Code Documentation (JSDoc)
 
 **Files:**
+
 - Modify: `system/*.js`
 
 - [ ] **Step 1: Add JSDoc to core system functions**

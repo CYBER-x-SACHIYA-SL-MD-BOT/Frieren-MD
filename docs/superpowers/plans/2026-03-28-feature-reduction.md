@@ -13,11 +13,13 @@
 ### Task 1: Remove Non-Core Command Directories
 
 **Files:**
+
 - Delete: `cmd/command/ai/`, `cmd/command/anime/`, `cmd/command/channel/`, `cmd/command/download/`, `cmd/command/economy/`, `cmd/command/fun/`, `cmd/command/game/`, `cmd/command/islamic/`, `cmd/command/rpg/`
 
 - [ ] **Step 1: Execute removal of command directories**
 
 Run:
+
 ```bash
 rm -rf cmd/command/ai cmd/command/anime cmd/command/channel cmd/command/download cmd/command/economy cmd/command/fun cmd/command/game cmd/command/islamic cmd/command/rpg
 ```
@@ -39,11 +41,13 @@ git commit -m "refactor: remove non-core command categories"
 ### Task 2: Remove Non-Core Plugin Directories
 
 **Files:**
+
 - Delete: `cmd/plugins/ai/`, `cmd/plugins/anime/`, `cmd/plugins/download/`, `cmd/plugins/fun/`, `cmd/plugins/game/`, `cmd/plugins/islamic/`, `cmd/plugins/maker/`, `cmd/plugins/rpg/`, `cmd/plugins/sticker/`
 
 - [ ] **Step 1: Execute removal of plugin directories**
 
 Run:
+
 ```bash
 rm -rf cmd/plugins/ai cmd/plugins/anime cmd/plugins/download cmd/plugins/fun cmd/plugins/game cmd/plugins/islamic cmd/plugins/maker cmd/plugins/rpg cmd/plugins/sticker
 ```
@@ -65,6 +69,7 @@ git commit -m "refactor: remove non-core plugin categories"
 ### Task 4: Prune Imports in `index.js`
 
 **Files:**
+
 - Modify: `index.js`
 
 - [ ] **Step 1: Remove imports of deleted files**
@@ -72,7 +77,7 @@ git commit -m "refactor: remove non-core plugin categories"
 ```javascript
 // Remove these lines
 import gameHandler from './system/game.js'
-import { checkAdzan, checkRamadhan } from './system/islamic_timer.js' 
+import { checkAdzan, checkRamadhan } from './system/islamic_timer.js'
 import { autofarm, timerhistory, cost_robbery } from './system/gamefunc.js'
 ```
 
@@ -80,8 +85,13 @@ import { autofarm, timerhistory, cost_robbery } from './system/gamefunc.js'
 
 ```javascript
 // Remove these lines in startBot function
-autofarm(); cost_robbery(); timerhistory(xp)
-setInterval(() => { checkAdzan(xp); checkRamadhan(xp) }, 5000)
+autofarm()
+cost_robbery()
+timerhistory(xp)
+setInterval(() => {
+    checkAdzan(xp)
+    checkRamadhan(xp)
+}, 5000)
 ```
 
 - [ ] **Step 3: Verify syntax**

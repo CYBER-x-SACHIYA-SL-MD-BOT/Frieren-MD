@@ -26,10 +26,10 @@
 
 ### ✨ Kenapa Memilih Frieren-MD?
 
-*   **Modular Architecture**: Mudah dimodifikasi dan dikembangkan oleh siapa saja.
-*   **Intelligent AI**: Didukung oleh logika AI yang fleksibel dan responsif.
-*   **RPG System V3**: Petualangan tanpa henti dengan sistem ekonomi, level, dan item.
-*   **Lightweight**: Dioptimalkan untuk berjalan lancar bahkan di server spesifikasi rendah.
+- **Modular Architecture**: Mudah dimodifikasi dan dikembangkan oleh siapa saja.
+- **Intelligent AI**: Didukung oleh logika AI yang fleksibel dan responsif.
+- **RPG System V3**: Petualangan tanpa henti dengan sistem ekonomi, level, dan item.
+- **Lightweight**: Dioptimalkan untuk berjalan lancar bahkan di server spesifikasi rendah.
 
 ---
 
@@ -37,12 +37,12 @@
 
 Sistem RPG telah dioptimalkan agar lebih responsif dan adiktif.
 
-| Fitur | Deskripsi |
-| :--- | :--- |
-| **Bounty Hunter** | Buru pemain dengan kriminalitas tinggi dan klaim hadiahnya. |
-| **Job System** | Pilih peran sebagai Warrior, Thief, atau Farmer untuk bonus unik. |
-| **Alchemy** | Racik berbagai potion dan bahan langka untuk bertahan di Dungeon. |
-| **Pet Companion** | Pelihara makhluk mistis yang akan membantumu dalam pertempuran. |
+| Fitur             | Deskripsi                                                         |
+| :---------------- | :---------------------------------------------------------------- |
+| **Bounty Hunter** | Buru pemain dengan kriminalitas tinggi dan klaim hadiahnya.       |
+| **Job System**    | Pilih peran sebagai Warrior, Thief, atau Farmer untuk bonus unik. |
+| **Alchemy**       | Racik berbagai potion dan bahan langka untuk bertahan di Dungeon. |
+| **Pet Companion** | Pelihara makhluk mistis yang akan membantumu dalam pertempuran.   |
 
 ---
 
@@ -93,6 +93,7 @@ Jika Anda menemukan bug, error, atau memiliki saran fitur, silakan laporkan mela
 Kami sangat terbuka untuk kontribusi! Frieren-MD adalah proyek komunitas, dan bantuan Anda sangat berarti.
 
 ### 🍴 Cara Fork & Kustomisasi
+
 1.  **Fork** repository ini ke akun GitHub Anda.
 2.  **Clone** hasil fork Anda ke lokal.
 3.  Lakukan perubahan atau tambahkan fitur baru.
@@ -100,6 +101,7 @@ Kami sangat terbuka untuk kontribusi! Frieren-MD adalah proyek komunitas, dan ba
 5.  Ajukan **Pull Request** (PR) jika ingin fitur tersebut digabungkan ke repository utama.
 
 ### ✨ Dukung Proyek Ini
+
 Jika Anda menyukai bot ini, pertimbangkan untuk memberikan **Star ⭐** pada repository ini sebagai bentuk dukungan!
 
 ---
