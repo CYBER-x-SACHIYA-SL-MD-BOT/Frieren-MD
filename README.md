@@ -6,7 +6,7 @@
 <!-- Dynamic Typing Animation -->
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=1000&color=92E3A9&center=true&vCenter=true&width=500&lines=Your+Ageless+Digital+Companion;Interactive+AI+Powered+by+Gemini;Deep+RPG+V3+Adventure;Optimized+Modular+Architecture" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=1000&color=92E3A9&center=true&vCenter=true&width=500&lines=Your+Ageless+Digital+Companion;Interactive+AI+Assistant;Deep+RPG+V3+Adventure;Optimized+Modular+Architecture" alt="Typing SVG" />
   </a>
 </p>
 
@@ -27,7 +27,7 @@
 ### ✨ Kenapa Memilih Frieren-MD?
 
 *   **Modular Architecture**: Mudah dimodifikasi dan dikembangkan oleh siapa saja.
-*   **Intelligent AI**: Didukung oleh logika AI yang telah dipersonalisasi.
+*   **Intelligent AI**: Didukung oleh logika AI yang fleksibel dan responsif.
 *   **RPG System V3**: Petualangan tanpa henti dengan sistem ekonomi, level, dan item.
 *   **Lightweight**: Dioptimalkan untuk berjalan lancar bahkan di server spesifikasi rendah.
 
@@ -74,11 +74,17 @@ npm start
 graph TD
     A[WhatsApp Interface] -->|Socket| B(Baileys Library)
     B --> C{Dispatcher}
-    C -->|AI Requests| D[Gemini/OpenAI]
+    C -->|AI Requests| D[AI Engine / LLM]
     C -->|Game Logic| E[RPG Engine V3]
     C -->|Utilities| F[Tools & Search]
     E --> G[(Database Local/Mongo)]
 ```
+
+---
+
+## 🚩 Melaporkan Masalah (Issues)
+
+Jika Anda menemukan bug, error, atau memiliki saran fitur, silakan laporkan melalui halaman **[Issues](https://github.com/Har404-err/frieren-md/issues)** di GitHub. Kami akan sangat menghargai laporan yang detail agar masalah dapat segera diatasi.
 
 ---
 
