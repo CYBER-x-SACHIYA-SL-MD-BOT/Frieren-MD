@@ -1,0 +1,219 @@
+/**
+ * @module plugins/internet/nekopoi
+ * @description Search & Download Nekopoi (Hentai)
+ */
+
+import axios from 'axios';
+import * as cheerio from 'cheerio';
+
+const tiny = (t) => t.split('').map(c=>{const m={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ꜰ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'};return m[c]||c}).join('')
+
+async function NekopoiSearch(query, page = 1) {
+  const baseUrl = 'https://nekopoi.care/search/'
+  const results = []
+
+  try {
+    const url = page === 1 ? `${baseUrl}${encodeURIComponent(query)}` : `${baseUrl}${encodeURIComponent(query)}/page/${page}/?${encodeURIComponent(query)}`
+    const response = await axios.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      }
+    })
+
+    const $ = cheerio.load(response.data)
+    const items = $('div.result ul li')
+    if (items.length === 0) return results
+
+    items.each((index, element) => {
+      const titleElement = $(element).find('h2 a')
+      const title = titleElement.text().trim()
+      const url = titleElement.attr('href')
+      const thumbnail = $(element).find('img').attr('src')
+      if (title && url) results.push({ title, url, thumbnail })
+    })
+
+    return results
+  } catch (error) {
+    console.error('Error Nekopoi Search:', error.message)
+    return []
+  }
+}
+
+async function NekopoiDetail(url) {
+  try {
+    const response = await axios.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      }
+    })
+    const $ = cheerio.load(response.data)
+    const result = {
+      title: $('div.eroinfo h1').text().trim(),
+      parody: '',
+      producer: '',
+      duration: '',
+      views: '',
+      date: '',
+      thumbnail: $('div.thm img').attr('src') || '',
+      sizes: {},
+      streams: [],
+      downloads: {}
+    }
+
+    $('div.konten p').each((i, el) => {
+      const text = $(el).text().trim()
+      if (text.startsWith('Parody')) result.parody = text.replace('Parody : ', '').trim()
+      else if (text.startsWith('Producers')) result.producer = text.replace('Producers : ', '').trim()
+      else if (text.startsWith('Duration')) result.duration = text.replace('Duration : ', '').trim()
+      else if (text.includes('Size')) {
+        const sizeMatches = text.match(/(\d+P)\s*:\s*([\d.]+mb)/gi)
+        if (sizeMatches) {
+          sizeMatches.forEach(match => {
+            const [resolution, size] = match.split(' : ')
+            result.sizes[resolution.trim()] = size.trim()
+          })
+        }
+      }
+    })
+
+    const viewsDateText = $('div.eroinfo p').text().trim()
+    const viewsMatch = viewsDateText.match(/Dilihat\s+([\d.]+)\s+kali/)
+    const dateMatch = viewsDateText.match(/\/\s+(.+)/)
+    result.views = viewsMatch ? viewsMatch[1] : ''
+    result.date = dateMatch ? dateMatch[1].trim() : ''
+
+    $('div#show-stream div.openstream iframe').each((i, el) => {
+      const src = $(el).attr('src')
+      if (src) result.streams.push({ name: `Stream ${i + 1}`, url: src })
+    })
+
+    $('div.boxdownload div.liner').each((i, el) => {
+      const resolution = $(el).find('div.name').text().match(/\[(\d+p)\]/)?.[1]
+      if (resolution) {
+        const links = { normal: [], ouo: [] }
+        $(el).find('div.listlink p a').each((i, linkEl) => {
+          const href = $(linkEl).attr('href')
+          const text = $(linkEl).text().trim()
+          if (href.includes('ouo.io')) links.ouo.push({ name: text.replace('[ouo]', ''), url: href })
+          else links.normal.push({ name: text, url: href })
+        })
+        result.downloads[resolution] = links
+      }
+    })
+    return result
+
+  } catch (error) {
+    console.error('Error Nekopoi Detail:', error.message)
+    return null
+  }
+}
+
+let handler = async (m, { args, conn, usedPrefix, command }) => {
+  const subcommand = (args[0] || '').toLowerCase()
+  
+  // --- SEARCH MODE ---
+  if (subcommand === 'search') {
+      const keyword = args.slice(1).join(' ')
+      if (!keyword) return m.reply(`📝 Masukkan judul!
+Contoh: ${usedPrefix + command} search Alya`)
+      await conn.sendMessage(m.chat, { react: { text: '🔍', key: m.key } })
+      const results = await NekopoiSearch(keyword)
+      if (!results.length) return m.reply('❌ Tidak ditemukan.')
+      let txt = `╭───「 *${tiny('NEKOPOI SEARCH')}* 」───`
+      txt += `│ 📝 Query: ${keyword.toUpperCase()}`
+      txt += `╰────────────────────`
+      results.slice(0, 10).forEach((item, i) => {
+          txt += `*${i + 1}. ${item.title}*`
+          txt += `🔗 ${item.url}`
+          txt += `> Cmd: ${usedPrefix + command} detail ${item.url}`
+      })
+      await m.reply(txt)
+      await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
+      return
+  }
+
+  // --- DETAIL MODE ---
+  if (subcommand === 'detail') {
+      const url = args[1]
+      if (!url || !url.startsWith('http')) return m.reply('❌ Link tidak valid!')
+      await conn.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
+      const data = await NekopoiDetail(url)
+      if (!data) return m.reply('❌ Gagal mengambil detail.')
+      let teks = `📺 *${data.title}*`
+      teks += `🎭 Parody: ${data.parody}`
+      teks += `🏢 Producer: ${data.producer}`
+      teks += `⏱️ Durasi: ${data.duration}`
+      teks += `👁️ Views: ${data.views}`
+      teks += `📅 Tanggal: ${data.date}`
+      
+      // Sizes
+      if (Object.keys(data.sizes).length > 0) {
+          teks += `
+📦 *Ukuran File:*`
+          Object.entries(data.sizes).forEach(([res, size]) => {
+            teks += `• ${res}: ${size}`
+          })
+      }
+      
+      // Streams
+      if (data.streams.length) {
+          teks += `
+▶️ *Stream:*`
+          data.streams.forEach(s => {
+              teks += `• ${s.name}: ${s.url}`
+          })
+      }
+      
+      // Downloads
+      teks += `
+⬇️ *Download Links (Manual / Auto):*`
+      Object.entries(data.downloads).forEach(([res, links]) => {
+        teks += `
+🔸 *${res}*`
+        // OuO Links (For Auto)
+        if (links.ouo.length) {
+             links.ouo.forEach(link => {
+                 teks += `  - ${link.name} (Auto): .neko get ${link.url}`
+             })
+        }
+        
+        // Normal Links
+        if (links.normal.length) {
+          links.normal.forEach(link => {
+            teks += `  - ${link.name}: ${link.url}`
+          })
+        }
+      })
+      
+      await conn.sendMessage(m.chat, {
+        image: { url: data.thumbnail },
+        caption: teks
+      }, { quoted: m })
+      
+      await conn.sendMessage(m.chat, { react: { text: '🔞', key: m.key } })
+      return
+  }
+  
+  // --- HELP ---
+  m.reply(
+      `╭───「 *${tiny('NEKOPOI MENU')}* 」───` +
+      `│` +
+      `│ 🔞 Cari & Download Anime H.` +
+      `│` +
+      `│ 🔎 *Search:*` +
+      `│ ${usedPrefix + command} search <judul>` +
+      `│` +
+      `│ 📄 *Detail:*` +
+      `│ ${usedPrefix + command} detail <url>` +
+      `│` +
+      `╰────────────────────`
+  )
+}
+
+handler.command = ['nekopoi']
+handler.help = [] // Hide
+handler.tags = [] //Hide
+handler.premium = true 
+handler.prefix = true
+
+export default handler

@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Session & Logs
+connect/session/
+logs/
+temp/
+
+# DB
+system/db/database.json
+system/db/dataGc.json
+system/db/sim_data.json
+system/db/waifu_cache.json
+
+# OS
+.DS_Store
+thumbs.db
+
+# Others
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+/vendor
+Gemfile.lock

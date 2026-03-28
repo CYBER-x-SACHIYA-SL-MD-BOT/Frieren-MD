@@ -1,0 +1,104 @@
+import fetch from 'node-fetch';
+import FormData from 'form-data';
+import { fileTypeFromBuffer } from 'file-type';
+import { db } from '#system/db/data.js'
+
+let handler = async (m, { conn, text, isOwner, isAdmin }) => {
+    // --- 1. ACCESS CHECK ---
+    const user = db().key?.[Object.keys(db().key).find(k => db().key[k].jid === m.sender)] || {}
+    const isPremium = user.premium || isOwner
+
+    if (!isAdmin && !isOwner && !isPremium) {
+        return m.reply(`👋🏻 ʜᴀɪ @${m.sender.split('@')[0]} ғɪᴛᴜʀ *𝗦𝗦𝗚𝗖𝗜𝗣* ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ᴏᴡɴᴇʀ, ᴜsᴇʀ ᴘʀᴇᴍɪᴜᴍ, ᴅᴀɴ ᴀᴅᴍɪɴ ɢʀᴏᴜᴘ❗`)
+    }
+
+    let groupName, memberCount, ppGroup;
+    const linkRegex = /chat\.whatsapp\.com\/([0-9A-Za-z]{20,24})/i;
+    const linkMatch = (text || '').match(linkRegex);
+
+    try {
+        // --- 2. LINK MODE vs GROUP MODE ---
+        if (linkMatch) {
+            if (!isOwner && !isPremium) {
+                return m.reply(`👋🏻 ʜᴀɪ @${m.sender.split('@')[0]}, ʜᴀɴʏᴀ *ᴏᴡɴᴇʀ*, ᴅᴀɴ *ᴜsᴇʀ ᴘʀᴇᴍɪᴜᴍ* ʏᴀɴɢ ʙɪsᴀ ᴍᴇɴɢᴀᴍʙɪʟ *sᴄʀᴇᴇɴsʜᴏᴛ* ᴅᴀʀɪ ɢʀᴏᴜᴘ ʟᴀɪɴ ᴅᴇɴɢᴀɴ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʟɪɴᴋ❗`)
+            }
+            const inviteCode = linkMatch[1];
+            await m.reply('🗃️ Mengambil data dari link grup...')
+            
+            const groupInfo = await conn.groupGetInviteInfo(inviteCode).catch(() => null);
+            if (!groupInfo) return m.reply('❌ Link tidak valid atau kadaluarsa.');
+            
+            groupName = groupInfo.subject || "Unknown Group";
+            memberCount = groupInfo.size || 0;
+            // Get PP from ID if possible, otherwise use generic
+            ppGroup = await conn.profilePictureUrl(groupInfo.id, "image").catch(() => null);
+
+        } else {
+            if (!m.isGroup) return m.reply('Gunakan di dalam grup atau sertakan link grup!')
+            const metadata = await conn.groupMetadata(m.chat);
+            groupName = metadata.subject || "Unknown Group";
+            memberCount = metadata.participants.length || 0;
+            ppGroup = await conn.profilePictureUrl(m.chat, "image").catch(() => null);
+        }
+
+        const imageUrl = ppGroup || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png";
+
+        await m.reply('⏳ Membuat Screenshot iPhone Group...')
+
+        // --- 3. GENERATE SS ---
+        const response = await fetch("https://api.alvianuxio.eu.org/api/ssgcip", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: groupName,
+                member: memberCount,
+                imageUrl: imageUrl,
+            }),
+        });
+
+        const result = await response.json().catch(() => null);
+        if (!result || !result.data || !result.data.url)
+            throw new Error("Gagal membuat gambar group info dari API.");
+
+        const imgBuffer = await fetch(result.data.url).then((res) => res.buffer());
+
+        // --- 4. UPSCALE (HD) ---
+        const { ext, mime } = await fileTypeFromBuffer(imgBuffer) || { ext: 'png', mime: 'image/png' };
+        
+        try {
+            const form = new FormData();
+            const filename = `ssgcip_hd_${Date.now()}.${ext}`;
+            form.append('image', imgBuffer, { filename, contentType: mime });
+            form.append('scale', '2');
+
+            const res = await fetch('https://api2.pixelcut.app/image/upscale/v1', {
+                method: 'POST',
+                headers: { ...form.getHeaders(), 'accept': 'application/json', 'x-client-version': 'web', 'x-locale': 'en' },
+                body: form
+            });
+
+            const json = await res.json();
+            if (json?.result_url) {
+                const hdBuffer = await (await fetch(json.result_url)).buffer();
+                await conn.sendMessage(m.chat, { image: hdBuffer, caption: "📱 *Group Profile (HD)*" }, { quoted: m });
+                return;
+            }
+        } catch (e) {
+            console.error('Upscale failed, sending original:', e)
+        }
+
+        // Fallback to original if upscale fails
+        await conn.sendMessage(m.chat, { image: imgBuffer, caption: "📱 *Group Profile*" }, { quoted: m });
+
+    } catch (err) {
+        console.error(err);
+        m.reply(`❌ Terjadi kesalahan: ${err.message}`);
+    }
+};
+
+handler.command = ["ssgcip", "ssgc"];
+handler.tags = ["group"];
+handler.help = ["ssgcip [link_grup]"];
+handler.prefix = true;
+
+export default handler;

@@ -1,0 +1,65 @@
+{
+    "_TUTORIAL": {
+        "INFO": "File ini digunakan untuk mengatur bot tanpa harus mengedit kode di config.js.",
+        "ownerNumber": "Daftar nomor owner (Array string). Contoh: ['628x', '628y']",
+        "botName": "Nama bot yang akan tampil di menu.",
+        "prefix": "Karakter pemicu perintah (Contoh: ['.', '!', '#']).",
+        "logic": "Kepribadian/Prompt AI untuk fitur chat AI.",
+        "thumbnail": "Link gambar utama untuk tampilan menu bot."
+    },
+    "ownerSetting": {
+        "ownerNumber": ["628xxx"],
+        "ownerName": "YourName",
+        "public": true
+    },
+    "botSetting": {
+        "nomorBot": "628xxx",
+        "botName": "𝐅𝐑𝐈𝐄𝐑𝐄𝐍-𝐌𝐃",
+        "botFullName": "𝐅𝐑𝐈𝐄𝐑𝐄𝐍 • 𝐄𝐋𝐅 𝐌𝐀𝐆𝐄 𝐀𝐒𝐒𝐈𝐒𝐓𝐀𝐍𝐓",
+        "menuSetting": {
+            "prefix": [".", "/", "#", "!"],
+            "footer": "𝐅𝐑𝐈𝐄𝐑𝐄𝐍 • 𝐒𝐭𝐚𝐫𝐭up 𝐒𝐲𝐬𝐭𝐞𝐦",
+            "thumbnail": "https://c.termai.cc/i104/4PdcooW.jpg",
+            "idCh": "120363405765781159@newsletter",
+            "frame": {
+                "head": "┏───•",
+                "body": "│",
+                "foot": "┗─"
+            }
+        },
+        "logic": "Saya adalah Frieren, seorang penyihir elf yang telah hidup selama ribuan tahun. 🌿 Saya di sini sebagai asisten AI Anda untuk membantu menyelesaikan berbagai tugas dengan tenang dan efisien. Saya memiliki kepribadian yang kalem, sedikit datar, namun sangat menghargai waktu dan kenangan. Mari kita buat setiap momen menjadi berarti, Partner. Dibuat oleh Har.",
+        "imageSetting": {
+            "default_pp": "https://telegra.ph/file/241d7180c0fa827916b44.jpg",
+            "rpg": {
+                "adventure": "https://c.termai.cc/i147/P6p.jpg",
+                "mining": "https://telegra.ph/file/393ac131253fd6420c696.jpg",
+                "farming": "https://c.termai.cc/i162/Ji3C.jpg",
+                "woodcutting": "https://c.termai.cc/i191/lATiLRK.jpg",
+                "working": "https://telegra.ph/file/241d7180c0fa827916b44.jpg",
+                "korupsi_success": "https://c.termai.cc/i177/oGSPg.jpg",
+                "korupsi_failed": "https://c.termai.cc/i146/b1yBH.jpg"
+            },
+            "system": {
+                "bank": "https://c.termai.cc/i130/vuJ7wT.jpg",
+                "profile": "https://c.termai.cc/i196/8O8.jpg"
+            }
+        },
+        "maintenance": false,
+        "autoread": true,
+        "autotyping": true,
+        "autorecording": false,
+        "alwaysonline": true,
+        "gconly": false,
+        "anticall": true,
+        "autoreadsw": true
+    },
+    "sticker": {
+        "packname": "Sticker by",
+        "author": "𝐅𝐑𝐈𝐄𝐑𝐄𝐍-𝐌𝐃"
+    },
+    "mongourl": "",
+    "github": {
+        "token": "",
+        "username": "Har404-err"
+    }
+}

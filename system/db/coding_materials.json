@@ -1,0 +1,128 @@
+[
+    {
+        "id": "js001",
+        "judul": "Variabel Dasar JavaScript",
+        "deskripsi": "Mempelajari deklarasi variabel menggunakan var, let, dan const.",
+        "kode_contoh": "let nama = 'Budi';\nconst umur = 25;\nconsole.log(nama, umur);",
+        "output_contoh": "Budi 25",
+        "level": "pemula",
+        "topik": ["javascript", "variabel"]
+    },
+    {
+        "id": "react001",
+        "judul": "Komponen React Dasar",
+        "deskripsi": "Membuat komponen fungsional sederhana di React.",
+        "kode_contoh": "function Welcome(props) {\n  return <h1>Halo, {props.name}</h1>;\n}\n\nconst element = <Welcome name=\"Sara\" />,",
+        "output_contoh": "<h1>Halo, Sara</h1>",
+        "level": "pemula",
+        "topik": ["react", "component", "frontend"]
+    },
+    {
+        "id": "react002",
+        "judul": "React State (useState)",
+        "deskripsi": "Mengelola state dalam komponen fungsional menggunakan Hook useState.",
+        "kode_contoh": "import React, { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <p>Anda menekan {count} kali</p>\n      <button onClick={() => setCount(count + 1)}>\n        Klik saya\n      </button>\n    </div>\n  );\n}",
+        "output_contoh": "(Rendered HTML with button and counter text)",
+        "level": "menengah",
+        "topik": ["react", "state", "hooks"]
+    },
+    {
+        "id": "html001",
+        "judul": "Struktur Dasar HTML",
+        "deskripsi": "Pengenalan tag HTML dasar.",
+        "kode_contoh": "<!DOCTYPE html>\n<html>\n<body>\n<h1>Hello</h1>\n</body>\n</html>",
+        "output_contoh": "Hello",
+        "level": "pemula",
+        "topik": ["html", "web"]
+    },
+    {
+        "id": "css001",
+        "judul": "CSS Selectors",
+        "deskripsi": "Cara memilih elemen CSS.",
+        "kode_contoh": "/* Class Selector */\n.teks-merah { color: red; }\n\n/* ID Selector */\n#judul { font-size: 20px; }",
+        "output_contoh": "(Style applied)",
+        "level": "pemula",
+        "topik": ["css", "styling"]
+    },
+    {
+        "id": "css002",
+        "judul": "CSS Flexbox",
+        "deskripsi": "Layout dengan Flexbox.",
+        "kode_contoh": ".container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}",
+        "output_contoh": "(Centered content)",
+        "level": "menengah",
+        "topik": ["css", "layout"]
+    },
+    {
+        "id": "js002",
+        "judul": "JavaScript Functions",
+        "deskripsi": "Regular vs Arrow Function.",
+        "kode_contoh": "// Regular\nfunction tambah(a, b) { return a + b; }\n\n// Arrow\nconst kali = (a, b) => a * b;\nconsole.log(tambah(2,3), kali(2,3));",
+        "output_contoh": "5 6",
+        "level": "pemula",
+        "topik": ["javascript", "function"]
+    },
+    {
+        "id": "js003",
+        "judul": "Array Methods",
+        "deskripsi": "Map dan Filter.",
+        "kode_contoh": "const angka = [1, 2, 3, 4];\nconst kuadrat = angka.map(x => x * x);\nconst genap = angka.filter(x => x % 2 === 0);",
+        "output_contoh": "[1, 4, 9, 16] [2, 4]",
+        "level": "menengah",
+        "topik": ["javascript", "array"]
+    },
+    {
+        "id": "js004",
+        "judul": "Async/Await",
+        "deskripsi": "Asynchronous JavaScript.",
+        "kode_contoh": "async function getData() {\n  const janji = new Promise(r => setTimeout(() => r('Selesai'), 1000));\n  const hasil = await janji;\n  console.log(hasil);\n}\ngetData();",
+        "output_contoh": "Selesai",
+        "level": "lanjut",
+        "topik": ["javascript", "async"]
+    },
+    {
+        "id": "react003",
+        "judul": "React useEffect",
+        "deskripsi": "Side effects di React.",
+        "kode_contoh": "useEffect(() => {\n  document.title = 'Count: ' + count;\n}, [count]);",
+        "output_contoh": "(Title changes)",
+        "level": "menengah",
+        "topik": ["react", "hooks"]
+    },
+    {
+        "id": "node001",
+        "judul": "Node.js File System",
+        "deskripsi": "Read/Write files.",
+        "kode_contoh": "const fs = require('fs');\nfs.writeFileSync('test.txt', 'Halo');\nconsole.log(fs.readFileSync('test.txt', 'utf-8'));",
+        "output_contoh": "Halo",
+        "level": "menengah",
+        "topik": ["nodejs", "backend"]
+    },
+    {
+        "id": "node002",
+        "judul": "Express Server",
+        "deskripsi": "Simple Web Server.",
+        "kode_contoh": "const express = require('express');\nconst app = express();\napp.get('/', (req, res) => res.send('Hello'));\napp.listen(3000);",
+        "output_contoh": "Server on port 3000",
+        "level": "menengah",
+        "topik": ["nodejs", "express"]
+    },
+    {
+        "id": "py001",
+        "judul": "Python Variables",
+        "deskripsi": "Variables & Types.",
+        "kode_contoh": "name = \"Ani\"\nage = 20\nprint(f\"Name: {name}, Age: {age}\")",
+        "output_contoh": "Name: Ani, Age: 20",
+        "level": "pemula",
+        "topik": ["python", "basic"]
+    },
+    {
+        "id": "py002",
+        "judul": "Python Loops",
+        "deskripsi": "For and While loops.",
+        "kode_contoh": "for i in range(3):\n    print(i)",
+        "output_contoh": "0\n1\n2",
+        "level": "pemula",
+        "topik": ["python", "loops"]
+    }
+]

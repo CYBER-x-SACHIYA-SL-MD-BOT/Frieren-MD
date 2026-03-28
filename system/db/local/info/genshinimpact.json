@@ -1,0 +1,490 @@
+{
+    "6285794161086@s.whatsapp.net": {
+        "rpg": {
+            "hero": "electro",
+            "level": 1,
+            "xp": 18,
+            "gold": 25507,
+            "hp": 115,
+            "maxHp": 115,
+            "atk": 28,
+            "def": 9,
+            "skills": ["Transcendence: Baleful Omen"],
+            "allSkills": [],
+            "dungeonWins": 1,
+            "lastDungeon": "2025-04-16",
+            "lastRegen": 1744771781990,
+            "timezone": "WIB",
+            "lastQuest": "2025-04-16",
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [
+                {
+                    "name": "Raiden Shogun",
+                    "hp": 115,
+                    "maxHp": 115,
+                    "atk": 28,
+                    "def": 9,
+                    "skill": "Transcendence: Baleful Omen"
+                },
+                {
+                    "name": "Beidou",
+                    "hp": 105,
+                    "maxHp": 105,
+                    "atk": 22,
+                    "def": 10,
+                    "skill": "Tidecaller"
+                },
+                {
+                    "name": "Yae Miko",
+                    "hp": 90,
+                    "maxHp": 90,
+                    "atk": 23,
+                    "def": 7,
+                    "skill": "Yakan Evocation: Sesshou Sakura"
+                }
+            ],
+            "activeCharacter": {
+                "name": "Raiden Shogun",
+                "hp": 115,
+                "maxHp": 115,
+                "atk": 28,
+                "def": 9,
+                "skill": "Transcendence: Baleful Omen"
+            },
+            "createdAt": "4/16/2025, 9:49:41 AM",
+            "isQuestConfirmed": false
+        }
+    },
+    "6285824498694@s.whatsapp.net": {
+        "rpg": {
+            "hero": "electro",
+            "level": 3,
+            "xp": 214,
+            "gold": 326,
+            "hp": 155,
+            "maxHp": 155,
+            "atk": 72,
+            "def": 22,
+            "skills": ["Transcendence: Baleful Omen"],
+            "allSkills": [],
+            "dungeonWins": 10,
+            "lastDungeon": "2025-06-29",
+            "lastRegen": 1751200765872,
+            "timezone": "WITA",
+            "lastQuest": "2025-06-29",
+            "equippedWeapon": {
+                "name": "Eagle Crossbow",
+                "atk": 34,
+                "def": 7
+            },
+            "inventory": [],
+            "characters": [
+                {
+                    "name": "Raiden Shogun",
+                    "hp": 115,
+                    "maxHp": 115,
+                    "atk": 28,
+                    "def": 9,
+                    "skill": "Transcendence: Baleful Omen"
+                },
+                {
+                    "name": "Cyno",
+                    "hp": 100,
+                    "maxHp": 100,
+                    "atk": 25,
+                    "def": 8,
+                    "skill": "Secret Rite: Chasmic Soul"
+                }
+            ],
+            "activeCharacter": {
+                "name": "Raiden Shogun",
+                "hp": 115,
+                "maxHp": 115,
+                "atk": 28,
+                "def": 9,
+                "skill": "Transcendence: Baleful Omen"
+            },
+            "createdAt": "5/31/2025, 9:34:52 AM",
+            "isQuestConfirmed": false
+        }
+    },
+    "6282337525191@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1744772711695,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    },
+    "62895392162041@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1744772960717,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    },
+    "6282196975548@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1744773698892,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    },
+    "628895409378@s.whatsapp.net": {
+        "rpg": {
+            "hero": "cryo",
+            "level": 1,
+            "xp": 48,
+            "gold": 72,
+            "hp": 95,
+            "maxHp": 95,
+            "atk": 27,
+            "def": 8,
+            "skills": ["Divine Maiden's Deliverance"],
+            "allSkills": [],
+            "dungeonWins": 1,
+            "lastDungeon": "2025-04-25",
+            "lastRegen": 1745593921191,
+            "timezone": "WIB",
+            "lastQuest": "2025-04-25",
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [
+                {
+                    "name": "Shenhe",
+                    "hp": 95,
+                    "maxHp": 95,
+                    "atk": 22,
+                    "def": 8,
+                    "skill": "Divine Maiden's Deliverance"
+                }
+            ],
+            "activeCharacter": {
+                "name": "Shenhe",
+                "hp": 95,
+                "maxHp": 95,
+                "atk": 22,
+                "def": 8,
+                "skill": "Divine Maiden's Deliverance"
+            },
+            "createdAt": "4/25/2025, 10:12:01 PM",
+            "isQuestConfirmed": false
+        }
+    },
+    "6283181414785@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1744992748469,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    },
+    "6283871864830@s.whatsapp.net": {
+        "rpg": {
+            "hero": "electro",
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 115,
+            "maxHp": 115,
+            "atk": 28,
+            "def": 9,
+            "skills": ["Transcendence: Baleful Omen"],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1745107651144,
+            "timezone": "WIB",
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [
+                {
+                    "name": "Raiden Shogun",
+                    "hp": 115,
+                    "maxHp": 115,
+                    "atk": 28,
+                    "def": 9,
+                    "skill": "Transcendence: Baleful Omen"
+                }
+            ],
+            "activeCharacter": {
+                "name": "Raiden Shogun",
+                "hp": 115,
+                "maxHp": 115,
+                "atk": 28,
+                "def": 9,
+                "skill": "Transcendence: Baleful Omen"
+            },
+            "createdAt": "4/20/2025, 7:07:31 AM"
+        }
+    },
+    "6289683841286@s.whatsapp.net": {
+        "rpg": {
+            "hero": "pyro",
+            "level": 2,
+            "xp": 114,
+            "gold": 41,
+            "hp": 140,
+            "maxHp": 140,
+            "atk": 40,
+            "def": 13,
+            "skills": ["Searing Onslaught"],
+            "allSkills": [],
+            "dungeonWins": 4,
+            "lastDungeon": "2025-04-27",
+            "lastRegen": 1745708185641,
+            "timezone": "WIB",
+            "lastQuest": "2025-04-27",
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [
+                {
+                    "name": "Diluc",
+                    "hp": 120,
+                    "maxHp": 120,
+                    "atk": 25,
+                    "def": 10,
+                    "skill": "Searing Onslaught"
+                }
+            ],
+            "activeCharacter": {
+                "name": "Diluc",
+                "hp": 120,
+                "maxHp": 120,
+                "atk": 25,
+                "def": 10,
+                "skill": "Searing Onslaught"
+            },
+            "createdAt": "4/20/2025, 10:52:28 AM",
+            "isQuestConfirmed": false
+        }
+    },
+    "6282252863394@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 110,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1745223312746,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    },
+    "6283849773360@s.whatsapp.net": {
+        "rpg": {
+            "hero": "geo",
+            "level": 2,
+            "xp": 0,
+            "gold": 29,
+            "hp": 135,
+            "maxHp": 135,
+            "atk": 31,
+            "def": 15,
+            "skills": ["Masatsu Zetsugi: Akaushi Burst!"],
+            "allSkills": [],
+            "dungeonWins": 2,
+            "lastDungeon": "2025-05-02",
+            "lastRegen": 1745957630997,
+            "timezone": "WIB",
+            "lastQuest": "2025-05-02",
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [
+                {
+                    "name": "Arataki Itto",
+                    "hp": 115,
+                    "maxHp": 115,
+                    "atk": 26,
+                    "def": 12,
+                    "skill": "Masatsu Zetsugi: Akaushi Burst!"
+                },
+                {
+                    "name": "Gorou",
+                    "hp": 90,
+                    "maxHp": 90,
+                    "atk": 18,
+                    "def": 8,
+                    "skill": "Inuzaka All-Round Defense"
+                }
+            ],
+            "activeCharacter": {
+                "name": "Arataki Itto",
+                "hp": 115,
+                "maxHp": 115,
+                "atk": 26,
+                "def": 12,
+                "skill": "Masatsu Zetsugi: Akaushi Burst!"
+            },
+            "createdAt": "4/27/2025, 6:03:50 AM",
+            "isQuestConfirmed": false
+        }
+    },
+    "16802909855@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1746520011797,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    },
+    "6281277721026@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1746521339819,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    },
+    "6285272094905@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1746531838877,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    },
+    "6285825143528@s.whatsapp.net": {
+        "rpg": {
+            "hero": null,
+            "level": 1,
+            "xp": 0,
+            "gold": 100,
+            "hp": 100,
+            "maxHp": 100,
+            "atk": 10,
+            "def": 5,
+            "skills": [],
+            "allSkills": [],
+            "dungeonWins": 0,
+            "lastDungeon": null,
+            "lastRegen": 1760844942751,
+            "timezone": null,
+            "lastQuest": null,
+            "equippedWeapon": null,
+            "inventory": [],
+            "characters": [],
+            "activeCharacter": null
+        }
+    }
+}

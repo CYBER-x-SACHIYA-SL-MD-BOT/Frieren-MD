@@ -1,0 +1,45 @@
+name: Auto Format Docs
+
+on:
+  push:
+    paths:
+      - '**.md'
+      - '**.json'
+      - '**.js'
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    permissions:
+      # Memberikan izin untuk menulis (push) kembali ke repo
+      contents: write
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        # Mengambil riwayat lengkap agar bisa push balik
+        fetch-depth: 0
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24
+        
+    - name: Install Prettier
+      run: npm install -g prettier
+      
+    - name: Run Prettier Write
+      run: prettier --write "**.md" "**.json"
+      
+    - name: Check for changes
+      id: git-check
+      run: |
+        git diff --exit-code || echo "changed=true" >> $GITHUB_OUTPUT
+
+    - name: Commit and Push changes
+      if: steps.git-check.outputs.changed == 'true'
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore: automated code formatting by Prettier"
+        file_pattern: '**.md **.json'

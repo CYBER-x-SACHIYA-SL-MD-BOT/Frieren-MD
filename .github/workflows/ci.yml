@@ -1,0 +1,33 @@
+name: Frieren-MD CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x, 24.x]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install Dependencies
+      run: npm install
+      
+    - name: Check JavaScript Syntax (node -c)
+      run: |
+        echo "Checking for syntax errors in all JS files..."
+        find . -name "*.js" -not -path "./node_modules/*" -exec node -c {} +
+        echo "✅ No syntax errors found."

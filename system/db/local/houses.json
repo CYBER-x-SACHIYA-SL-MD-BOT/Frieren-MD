@@ -1,0 +1,52 @@
+[
+    {
+        "id": "RUM-001",
+        "nama": "Rumah 2 Lantai",
+        "desc": "2 Kamar, 1 Garasi",
+        "lokasi": "Jl. Anggrek Mekar No 78",
+        "harga": 100000000,
+        "luas": "150/120 m²",
+        "sertifikat": "SHM",
+        "kapasitas": 4
+    },
+    {
+        "id": "RUM-002",
+        "nama": "Rumah Minimalis",
+        "desc": "3 Kamar, 1 Garasi",
+        "lokasi": "Jl. Melati Indah No 12",
+        "harga": 125000000,
+        "luas": "200/150 m²",
+        "sertifikat": "SHM",
+        "kapasitas": 6
+    },
+    {
+        "id": "RUM-003",
+        "nama": "Rumah Modern",
+        "desc": "4 Kamar, 2 Garasi",
+        "lokasi": "Jl. Kenanga Asri No 45",
+        "harga": 200000000,
+        "luas": "250/220 m²",
+        "sertifikat": "SHM",
+        "kapasitas": 8
+    },
+    {
+        "id": "RUM-004",
+        "nama": "Rumah Klasik",
+        "desc": "3 Kamar, 1 Garasi",
+        "lokasi": "Jl. Mawar Merah No 23",
+        "harga": 150000000,
+        "luas": "180/140 m²",
+        "sertifikat": "SHM",
+        "kapasitas": 6
+    },
+    {
+        "id": "RUM-005",
+        "nama": "Rumah Kontemporer",
+        "desc": "5 Kamar, 3 Garasi",
+        "lokasi": "Jl. Dahlia Biru No 67",
+        "harga": 300000000,
+        "luas": "350/300 m²",
+        "sertifikat": "SHM",
+        "kapasitas": 10
+    }
+]
