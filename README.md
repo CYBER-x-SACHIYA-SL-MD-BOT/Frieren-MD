@@ -72,12 +72,12 @@ npm start
 
 ```mermaid
 graph TD
-    A[WhatsApp Interface] -->|Socket| B(Baileys Library)
-    B --> C{Dispatcher}
-    C -->|AI Requests| D[AI Engine / LLM]
-    C -->|Game Logic| E[RPG Engine V3]
-    C -->|Utilities| F[Tools & Search]
-    E --> G[(Database Local/Mongo)]
+    A["WhatsApp Interface"] -->|Socket| B("Baileys Library")
+    B --> C{"Dispatcher"}
+    C -->|"AI Requests"| D["AI Engine / LLM"]
+    C -->|"Game Logic"| E["RPG Engine V3"]
+    C -->|"Utilities"| F["Tools & Search"]
+    E --> G[("Database Local/Mongo")]
 ```
 
 ---
