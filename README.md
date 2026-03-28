@@ -39,7 +39,7 @@ Sistem RPG telah dioptimalkan agar lebih responsif dan adiktif.
 
 ## 🚀 Memulai Instalasi
 
-Pastikan Anda telah menginstal **Node.js v18+** dan **Git** di sistem Anda.
+Pastikan Anda telah menginstal **Node.js v24+** dan **Git** di sistem Anda.
 
 ### 🛠️ Langkah Cepat
 
