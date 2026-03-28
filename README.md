@@ -68,7 +68,46 @@ npm start
 
 ---
 
-## 🏗️ Struktur Proyek (Modular)
+## 🏗️ Arsitektur & Alur Kerja
+
+### 1. Sistem Dispatcher (Penerima Pesan)
+Diagram ini menjelaskan bagaimana **Frieren-MD** memproses setiap pesan yang masuk.
+
+```mermaid
+sequenceDiagram
+    participant U as "User"
+    participant W as "WhatsApp Socket"
+    participant B as "Frieren-MD Core"
+    participant D as "Command Dispatcher"
+    participant P as "Plugins / AI Engine"
+
+    U->>W: Kirim Pesan (e.g. .menu)
+    W->>B: Event "messages.upsert"
+    B->>D: Validasi Prefix & Permission
+    D->>P: Eksekusi Logika Perintah
+    P-->>B: Return Response (Text/Media)
+    B->>W: Kirim Balasan
+    W->>U: Pesan Diterima
+```
+
+### 2. Siklus Petualangan RPG V3
+Logika di balik sistem RPG yang memastikan permainan tetap seimbang.
+
+```mermaid
+graph LR
+    A["Mulai Adventure"] --> B{"Cek Stamina"}
+    B -- "Habis" --> C["Istirahat / Potion"]
+    B -- "Tersedia" --> D["Generate Random Event"]
+    D --> E{"Hasil Event"}
+    E -- "Menang" --> F["Dapat EXP & Money"]
+    E -- "Kalah" --> G["Pengurangan HP"]
+    F --> H["Update Database"]
+    G --> H
+    H --> I["Selesai Turn"]
+```
+
+### 3. Struktur Proyek (Modular)
+Pemisahan tanggung jawab antar komponen sistem.
 
 ```mermaid
 graph TD
@@ -77,7 +116,7 @@ graph TD
     C -->|"AI Requests"| D["AI Engine / LLM"]
     C -->|"Game Logic"| E["RPG Engine V3"]
     C -->|"Utilities"| F["Tools & Search"]
-    E --> G[("Database Local/Mongo")]
+    E --> G[("Database Local / Mongo")]
 ```
 
 ---
