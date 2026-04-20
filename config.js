@@ -28,22 +28,22 @@ try {
 // --- 👑 OWNER & MODERATOR ---
 // Format: ['Nomor', 'Nama', IsDeveloper (true/false)]
 global.owner = [
-  ['628xxx', 'YourName', true], // Ganti dengan nomor WhatsApp Anda
+  ['94760220052', 'YourName', true], // Ganti dengan nomor WhatsApp Anda
 ]
 
 // Sinkronisasi dengan Config JSON (Prioritas)
-if (cfg.ownerSetting?.ownerNumber) {
-  global.owner = cfg.ownerSetting.ownerNumber.map(n => [n, cfg.ownerSetting.ownerName || 'Owner', true])
+if (cfg.ownerSetting?.94760220052) {
+  global.owner = cfg.ownerSetting.94760220052.map(n => [n, cfg.ownerSetting.ownerName || 'Owner', true])
 }
 
-global.mods = []
-global.prems = []
+global.mods = [public]
+global.prems = [public]
 
 // --- ⌨️ PREFIX SETTINGS ---
 global.prefix = cfg.botSetting?.menuSetting?.prefix || ['.', '/', '#', '!']
 
 // --- 🤖 BOT IDENTITY ---
-global.nomorBot = cfg.botSetting?.nomorBot || '628xxx'
+global.nomorBot = cfg.botSetting?.nomorBot || '94760220052'
 global.namebot = cfg.botSetting?.botName || '𝐅𝐑𝐈𝐄𝐑𝐄𝐍-𝐌𝐃'
 global.botFullName = cfg.botSetting?.botFullName || '𝐅𝐑𝐈𝐄𝐑𝐄𝐍 • 𝐄𝐋𝐅 𝐌𝐀𝐆𝐄 𝐀𝐒𝐒𝐈𝐒𝐓𝐀𝐍𝐓'
 global.botVersion = '3.1.0'
