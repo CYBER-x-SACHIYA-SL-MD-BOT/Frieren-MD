@@ -28,22 +28,22 @@ try {
 // --- 👑 OWNER & MODERATOR ---
 // Format: ['Nomor', 'Nama', IsDeveloper (true/false)]
 global.owner = [
-  ['94760220052', 'YourName', true], // Ganti dengan nomor WhatsApp Anda
+  ['+94702782946', 'YourName', true], // Ganti dengan nomor WhatsApp Anda
 ]
 
 // Sinkronisasi dengan Config JSON (Prioritas)
-if (cfg.ownerSetting?.94760220052) {
-  global.owner = cfg.ownerSetting.94760220052.map(n => [n, cfg.ownerSetting.ownerName || 'Owner', true])
+if (cfg.ownerSetting?.+94702782946) {
+  global.owner = cfg.ownerSetting.+94702782946.map(n => [n, cfg.ownerSetting.ownerName || '+94702782946', true])
 }
 
 global.mods = [public]
 global.prems = [public]
 
 // --- ⌨️ PREFIX SETTINGS ---
-global.prefix = cfg.botSetting?.menuSetting?.prefix || ['.', '/', '#', '!']
+global.prefix = cfg.botSetting?.menuSetting?.prefix || ['.', '', '', '']
 
 // --- 🤖 BOT IDENTITY ---
-global.nomorBot = cfg.botSetting?.nomorBot || '94760220052'
+global.nomorBot = cfg.botSetting?.nomorBot || '+94702782946'
 global.namebot = cfg.botSetting?.botName || '𝐅𝐑𝐈𝐄𝐑𝐄𝐍-𝐌𝐃'
 global.botFullName = cfg.botSetting?.botFullName || '𝐅𝐑𝐈𝐄𝐑𝐄𝐍 • 𝐄𝐋𝐅 𝐌𝐀𝐆𝐄 𝐀𝐒𝐒𝐈𝐒𝐓𝐀𝐍𝐓'
 global.botVersion = '3.1.0'
@@ -64,7 +64,7 @@ global.sgh = 'https://github.com/Har404-err/frieren-md'
 global.sgc = 'https://chat.whatsapp.com/...'
 
 // --- 📡 CHANNEL & NEWSLETTER ---
-global.idCh = cfg.botSetting?.menuSetting?.idCh || '120363405765781159@newsletter'
+global.idCh = cfg.botSetting?.menuSetting?.idCh || '+94702782946@newsletter'
 global.linkCh = 'https://whatsapp.com/channel/0029VbCGe9q1XquPfMgyhN1c'
 
 // --- ⚙️ SYSTEM SETTINGS ---
