@@ -36,8 +36,8 @@ if (cfg.ownerSetting?.+94702782946) {
   global.owner = cfg.ownerSetting.+94702782946.map(n => [n, cfg.ownerSetting.ownerName || '+94702782946', true])
 }
 
-global.mods = [public]
-global.prems = [public]
+global.mods = []
+global.prems = []
 
 // --- ⌨️ PREFIX SETTINGS ---
 global.prefix = cfg.botSetting?.menuSetting?.prefix || ['.', '', '', '']
